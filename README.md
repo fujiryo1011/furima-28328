@@ -13,57 +13,47 @@
 | lastname   | string | null: false |
 | first-name | string | null: false |
 | last-name  | string | null: false |
-| date       | string | null: false |
+| birthday   | date   | null: false |
 
 ### Association
 
-- has_many :item_id
-- has_many :comment
+- has_many :items
+- has_many :comments
 
 
 ## comments テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| comment | string | null: false |
-| user_id | string | null: false |
-| item_id | string | null: false |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| comment | string     | null: false                    |
+| user_id | references | null: false, foreign_key: true |
+| item_id | references | null: false, foreign_key: true |
 
 
 ## items テーブル
 
-| Column       | Type   | Options                        |
-| ------------ | ------ | ------------------------------ |
-| image        | string | null: false, foreign_key: true |
-| name         | string | null: false, foreign_key: true |
-| comment      | string | null: false, foreign_key: true |
-| state        | string | null: false, foreign_key: true |
-| item_id      | string | null: false, foreign_key: true |
-| shipping fee | string | null: false, foreign_key: true |
-| date         | string | null: false, foreign_key: true |
-| price        | string | null: false, foreign_key: true |
+| Column       | Type   | Options     |
+| ------------ | ------ | ----------- |
+| image        | string | null: false |
+| name         | string | null: false |
+| comment      | string | null: false |
+| state        | string | null: false |
+| shipping fee | string | null: false |
+| date         | string | null: false |
+| price        | string | null: false |
 
 ### Association
 
-- has_many :comment
-
-
-## credits テーブル
-
-| Column     | Type   | Options                        |
-| ---------- | ------ | ------------------------------ |
-| card       | string | null: false, foreign_key: true |
-| expiration | string | null: false, foreign_key: true |
-| security   | string | null: false, foreign_key: true |
+- has_many :comments
 
 
 ## address テーブル
 
-| Column     | Type   | Options                        |
-| ---------- | ------ | ------------------------------ |
-| postalcoad | string | null: false, foreign_key: true |
-| prefecture | string | null: false, foreign_key: true |
-| city       | string | null: false, foreign_key: true |
-| address    | string | null: false, foreign_key: true |
-| building   | string | null: false, foreign_key: true |
-| phone      | string | null: false, foreign_key: true |
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+| postalcoad | string  | null: false                    |
+| prefecture | integer | null: false, foreign_key: true |
+| city       | string  | null: false                    |
+| address    | string  | null: false                    |
+| building   | string  | null: false                    |
+| phone      | string  | null: false                    |
