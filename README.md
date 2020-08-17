@@ -19,6 +19,8 @@
 
 - has_many :items
 - has_many :comments
+- has_many :buyers
+- has_many :address
 
 
 ## comments テーブル
@@ -29,19 +31,28 @@
 | user    | references | null: false, foreign_key: true |
 | item    | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :user
+- belongs_to :item
+
 
 ## items テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| image   | string | null: false |
-| name    | string | null: false |
-| comment | text   | null: false |
-| price   | string | null: false |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| image    | string     | null: false                    |
+| name     | string     | null: false                    |
+| comment  | text       | null: false                    |
+| category | string     | null: false                    |
+| price    | string     | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
 ### Association
 
 - has_many :comments
+- has_many :images
+- belongs_to :user
 
 
 ## address テーブル
@@ -69,4 +80,5 @@
 
 ### Association
 
-- has_many :
+- belongs_to :user
+- belongs_to :item
