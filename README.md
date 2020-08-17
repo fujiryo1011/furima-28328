@@ -4,23 +4,23 @@
 
 ## users テーブル
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| nickname   | string | null: false |
-| email      | string | null: false |
-| password   | string | null: false |
-| firstname  | string | null: false |
-| lastname   | string | null: false |
-| first-name | string | null: false |
-| last-name  | string | null: false |
-| birthday   | date   | null: false |
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| firstname       | string | null: false |
+| lastname        | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana  | string | null: false |
+| birthday        | date   | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :comments
 - has_many :buyers
-- has_many :address
+- has_many :addresses
 
 
 ## comments テーブル
