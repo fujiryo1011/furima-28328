@@ -25,22 +25,19 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| comment | string     | null: false                    |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| comment | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 
 ## items テーブル
 
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| image        | string | null: false |
-| name         | string | null: false |
-| comment      | string | null: false |
-| state        | string | null: false |
-| shipping fee | string | null: false |
-| date         | string | null: false |
-| price        | string | null: false |
+| Column  | Type   | Options     |
+| ------- | ------ | ----------- |
+| image   | string | null: false |
+| name    | string | null: false |
+| comment | text   | null: false |
+| price   | string | null: false |
 
 ### Association
 
@@ -49,11 +46,27 @@
 
 ## address テーブル
 
-| Column     | Type    | Options                        |
-| ---------- | ------- | ------------------------------ |
-| postalcoad | string  | null: false                    |
-| prefecture | integer | null: false, foreign_key: true |
-| city       | string  | null: false                    |
-| address    | string  | null: false                    |
-| building   | string  | null: false                    |
-| phone      | string  | null: false                    |
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| postalcoad | string  | null: false |
+| prefecture | integer | null: false |
+| city       | string  | null: false |
+| address    | string  | null: false |
+| building   | string  | null: false |
+| phone      | string  | null: false |
+
+### Association
+
+- has_many :user
+
+
+## buyer テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :
