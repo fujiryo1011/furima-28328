@@ -44,9 +44,9 @@
 | image        | string     | null: false                    |
 | name         | string     | null: false                    |
 | comment      | text       | null: false                    |
-| state        | text       | null: false                    |
-| shipping fee | text       | null: false                    |
-| date         | text       | null: false                    |
+| state        | integer    | null: false                    |
+| shipping fee | integer    | null: false                    |
+| date         | integer    | null: false                    |
 | category     | string     | null: false                    |
 | price        | string     | null: false                    |
 | user         | references | null: false, foreign_key: true |
