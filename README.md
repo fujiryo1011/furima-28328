@@ -15,11 +15,11 @@
 | last-name  | string | null: false |
 | date       | string | null: false |
 
-
 ### Association
 
 - has_many :item_id
 - has_many :comment
+
 
 ## comments テーブル
 
@@ -46,6 +46,7 @@
 ### Association
 
 - has_many :comment
+
 
 ## credits テーブル
 
