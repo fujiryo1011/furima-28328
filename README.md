@@ -45,8 +45,8 @@
 | state        | integer    | null: false                    |
 | shipping_fee | integer    | null: false                    |
 | date         | integer    | null: false                    |
-| category     | string     | null: false                    |
-| price        | integer     | null: false                    |
+| category     | integer    | null: false                    |
+| price        | integer    | null: false                    |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
