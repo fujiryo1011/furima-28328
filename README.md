@@ -45,7 +45,7 @@
 | name         | string     | null: false                    |
 | comment      | text       | null: false                    |
 | state        | integer    | null: false                    |
-| shipping fee | integer    | null: false                    |
+| shipping_fee | integer    | null: false                    |
 | date         | integer    | null: false                    |
 | category     | string     | null: false                    |
 | price        | string     | null: false                    |
@@ -54,24 +54,25 @@
 ### Association
 
 - has_many :comments
-- has_many :images
+- has_many :buyers
 - belongs_to :user
 
 
 ## address テーブル
 
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-| postalcoad | string  | null: false |
-| prefecture | integer | null: false |
-| city       | string  | null: false |
-| address    | string  | null: false |
-| building   | string  | null: false |
-| phone      | string  | null: false |
+| Column     | Type       | Options     |
+| ---------- | ---------- | ----------- |
+| postalcoad | string     | null: false |
+| prefecture | integer    | null: false |
+| city       | string     | null: false |
+| address    | string     | null: false |
+| building   | string     | null: true  |
+| phone      | string     | null: false |
+| buyer      | references | null: false |
 
 ### Association
 
-- has_many :buyers
+- belongs_to :buyers
 
 
 ## buyers テーブル
@@ -83,5 +84,6 @@
 
 ### Association
 
+- has_many :addresses
 - belongs_to :user
 - belongs_to :item
