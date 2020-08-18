@@ -17,10 +17,8 @@
 
 ### Association
 
-- has_many :items
-- has_many :comments
-- has_many :buyers
-- has_many :addresses
+- has_one :comment
+- has_one :buyer
 
 
 ## comments テーブル
@@ -48,14 +46,13 @@
 | shipping_fee | integer    | null: false                    |
 | date         | integer    | null: false                    |
 | category     | string     | null: false                    |
-| price        | string     | null: false                    |
+| price        | integer     | null: false                    |
 | user         | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :comments
-- has_many :buyers
-- belongs_to :user
+- has_one :comment
+- has_one :buyer
 
 
 ## address テーブル
@@ -66,13 +63,13 @@
 | prefecture | integer    | null: false |
 | city       | string     | null: false |
 | address    | string     | null: false |
-| building   | string     | null: true  |
+| building   | string     |             |
 | phone      | string     | null: false |
 | buyer      | references | null: false |
 
 ### Association
 
-- belongs_to :buyers
+- belongs_to :buyer
 
 
 ## buyers テーブル
@@ -84,6 +81,6 @@
 
 ### Association
 
-- has_many :addresses
+- has_one :address
 - belongs_to :user
 - belongs_to :item
