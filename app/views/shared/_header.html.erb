@@ -21,7 +21,7 @@
       <% if user_signed_in? %>
         <div class="user_nav lists-right">
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "hoge", new_user_registration_path, class: "post" %></li>
+          <li><%= link_to "#{current_user.nickname}", new_user_registration_path, class: "post" %></li>
         </div>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
