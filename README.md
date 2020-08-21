@@ -55,7 +55,7 @@
 - has_one :buyer
 
 
-## address テーブル
+## addresses テーブル
 
 | Column     | Type       | Options     |
 | ---------- | ---------- | ----------- |
