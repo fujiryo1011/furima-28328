@@ -44,6 +44,7 @@
 | comment      | text       | null: false                    |
 | state        | integer    | null: false                    |
 | shipping_fee | integer    | null: false                    |
+| area         | integer    | null: false                    |
 | date         | integer    | null: false                    |
 | category     | integer    | null: false                    |
 | price        | integer    | null: false                    |
