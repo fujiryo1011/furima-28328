@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    # image              {""}
+    image              { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/staff3.jpg')) }
     name               {"Tシャツ 新品 1枚"}
     comment            {"こちらの商品は新品のTシャツ1枚になります。"}
     category_id        {"メンズ"}
