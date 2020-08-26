@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  has_one :comment
+  has_one :buyer
+
   has_one_attached :image
 
   with_options presence: true do
@@ -10,6 +13,6 @@ class Item < ApplicationRecord
     validates :shipping_fee_id, numericality: { other_than: 1, message: 'Select' }
     validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
     validates :until_shipping_id, numericality: { other_than: 1, message: 'Select' }
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 end
