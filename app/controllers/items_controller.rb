@@ -18,6 +18,14 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+
+    redirect_to action: :done
+ 
+  end
+
+  def done
+    @item_buyer= item.find(params[:id])
+    @item_buyer.update( buyer_id: current_user.id)
   end
 
   private
