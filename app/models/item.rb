@@ -5,11 +5,11 @@ class Item < ApplicationRecord
     validates :image
     validates :name, length: { maximum: 40 }
     validates :comment, length: { maximum: 1000 }
-    validates :category_id
-    validates :state_id
-    validates :shipping_fee_id
-    validates :prefecture_id
-    validates :until_shipping_id
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+    validates :category_id, numericality: { other_than: 1, message: 'Select' }
+    validates :state_id, numericality: { other_than: 1, message: 'Select' }
+    validates :shipping_fee_id, numericality: { other_than: 1, message: 'Select' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
+    validates :until_shipping_id, numericality: { other_than: 1, message: 'Select' }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   end
 end
