@@ -40,7 +40,7 @@ RSpec.describe Item, type: :model do
     it 'カテゴリーが「--」だと登録できない' do
       @item.category_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category Select")
+      expect(@item.errors.full_messages).to include('Category Select')
     end
     it '商品の状態が空だと登録できない' do
       @item.state_id = ''
@@ -50,7 +50,7 @@ RSpec.describe Item, type: :model do
     it '商品の状態が「--」だと登録できない' do
       @item.state_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("State Select")
+      expect(@item.errors.full_messages).to include('State Select')
     end
     it '配送料の負担が空だと登録できない' do
       @item.shipping_fee_id = ''
@@ -60,7 +60,7 @@ RSpec.describe Item, type: :model do
     it '配送料の負担が「--」だと登録できない' do
       @item.shipping_fee_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Shipping fee Select")
+      expect(@item.errors.full_messages).to include('Shipping fee Select')
     end
     it '発送元の地域が空だと登録できない' do
       @item.prefecture_id = ''
@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
     it '発送元の地域が「--」だと登録できない' do
       @item.prefecture_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Prefecture Select")
+      expect(@item.errors.full_messages).to include('Prefecture Select')
     end
     it '発送までの日数が空だと登録できない' do
       @item.until_shipping_id = ''
@@ -80,7 +80,7 @@ RSpec.describe Item, type: :model do
     it '発送までの日数が「--」だと登録できない' do
       @item.until_shipping_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Until shipping Select")
+      expect(@item.errors.full_messages).to include('Until shipping Select')
     end
     it '価格が空だと登録できない' do
       @item.price = ''
