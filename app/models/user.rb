@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_many :items
   has_one :comment
   has_one :buyer
