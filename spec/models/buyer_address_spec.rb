@@ -1,7 +1,7 @@
 require 'rails_helper'
-RSpec.describe Address, type: :model do
+RSpec.describe BuyerAddress, type: :model do
   before do
-    @address = FactoryBot.build(:address)
+    @address = FactoryBot.build(:buyer_address)
   end
 
   describe '配送先情報入力' do
@@ -58,10 +58,10 @@ RSpec.describe Address, type: :model do
       @address.valid?
       expect(@address.errors.full_messages).to include('Phone is invalid')
     end
-    # it 'トークンが空だと購入できない' do
-    #   @address. = ''
-    #   @address.valid?
-    #   expect(@address.errors.full_messages).to include('')
-    # end
+    it 'トークンが空だと購入できない' do
+      @address.token = nil
+      @address.valid?
+      expect(@address.errors.full_messages).to include("Token can't be blank")
+    end
   end
 end

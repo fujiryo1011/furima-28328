@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index, :create]
   def index
-    @item = Item.find(params[:item_id])
     if user_signed_in? && current_user.id != @item.user_id && @item.buyer.nil?
 
     else
@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order = BuyerAddress.new(order_params)
     if @order.valid?
       pay_item
@@ -37,5 +36,9 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
