@@ -15,6 +15,11 @@ RSpec.describe BuyerAddress, type: :model do
       @address.valid?
       expect(@address).to be_valid
     end
+    it '建物番号が空でも購入できる事' do
+      @address.building = ''
+      @address.valid?
+      expect(@address).to be_valid
+    end
     it '電話番号にハイフンが無く11桁以内である事' do
       @address.phone = '09012345678'
       @address.valid?
